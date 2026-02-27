@@ -1,4 +1,4 @@
-# Teamwork Plugin
+# Teamwork
 
 多角色协作开发框架，为 Claude Code 提供完整的软件开发流程管理能力。
 
@@ -22,11 +22,7 @@ Teamwork 通过模拟 **PMO / PM / Designer / QA / RD / 资深架构师** 六种
 ## 安装
 
 ```bash
-# 添加 marketplace（如已配置）
-/plugin marketplace add lz6267/teamwork-plugin
-
-# 或直接安装
-/plugin install teamwork
+npx skills add lz6267/teamwork
 ```
 
 ## 使用
@@ -46,24 +42,22 @@ Teamwork 通过模拟 **PMO / PM / Designer / QA / RD / 资深架构师** 六种
 
 ```
 teamwork-plugin/
-├── .claude-plugin/
-│   └── plugin.json          # 插件配置
 ├── skills/
 │   └── teamwork/
-│       ├── SKILL.md          # 主入口 - 流程定义与状态管理
-│       ├── ROLES.md          # 角色定义与职责
-│       ├── RULES.md          # 核心规则（暂停、流转、Subagent）
-│       ├── REVIEWS.md        # 评审流程规范
-│       ├── STANDARDS.md      # 编码与文档标准
-│       ├── TEMPLATES.md      # 文档模板（PRD/TC/TECH 等）
-│       └── agents/           # Subagent 规范
-│           ├── README.md         # 通用规范
-│           ├── prd-review.md     # PRD 多角色评审
-│           ├── tc-review.md      # TC 多角色评审
-│           ├── ui-design.md      # Designer UI 设计
-│           ├── arch-tech-review.md  # 架构师技术方案 Review
-│           ├── rd-develop.md     # RD TDD 开发 + 自查
-│           └── arch-code-review.md  # 架构师 Code Review
+│       ├── SKILL.md              # 主入口 - 流程定义与状态管理
+│       ├── ROLES.md              # 角色定义与职责
+│       ├── RULES.md              # 核心规则（暂停、流转、Subagent）
+│       ├── REVIEWS.md            # 评审流程规范
+│       ├── STANDARDS.md          # 编码与文档标准
+│       ├── TEMPLATES.md          # 文档模板（PRD/TC/TECH 等）
+│       └── agents/               # Subagent 规范
+│           ├── README.md             # 通用规范
+│           ├── prd-review.md         # PRD 多角色评审
+│           ├── tc-review.md          # TC 多角色评审
+│           ├── ui-design.md          # Designer UI 设计
+│           ├── arch-tech-review.md   # 架构师技术方案 Review
+│           ├── rd-develop.md         # RD TDD 开发 + 自查
+│           └── arch-code-review.md   # 架构师 Code Review
 ├── README.md
 └── .gitignore
 ```
