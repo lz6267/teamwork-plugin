@@ -1,0 +1,16 @@
+{
+  "name": "teamwork",
+  "version": "1.0.0",
+  "description": "多角色协作开发框架 - PMO/PM/Designer/QA/RD/架构师 六角色协同，含 Subagent 自动化评审、TDD 开发、Code Review 等完整软件开发流程",
+  "author": {
+    "name": "lz6267"
+  },
+  "license": "MIT",
+  "skills": [
+    {
+      "name": "teamwork",
+      "path": "skills/teamwork",
+      "description": "多角色协作开发流程，使用 /teamwork 启动。支持 Feature / Bug / 问题排查 三种流程，包含 6 个 Subagent 自动化阶段。"
+    }
+  ]
+}

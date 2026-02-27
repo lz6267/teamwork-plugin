@@ -1,0 +1,111 @@
+# Teamwork Plugin
+
+多角色协作开发框架，为 Claude Code 提供完整的软件开发流程管理能力。
+
+## 概述
+
+Teamwork 通过模拟 **PMO / PM / Designer / QA / RD / 资深架构师** 六种角色，在 Claude Code 中实现结构化的软件开发协作流程。
+
+支持三种流程类型：
+- **Feature 流程** — 完整的需求→设计→开发→测试→验收流程
+- **Bug 处理流程** — 排查→判断→修复→验证→文档同步
+- **问题排查流程** — 定位问题根因并建议后续处理方式
+
+### 核心特性
+
+- **6 个 Subagent 自动化阶段**：PRD 评审、TC 评审、UI 设计、架构师 TECH Review、TDD 开发+自查、架构师 Code Review
+- **多角色评审机制**：PRD 和 TC 均通过多视角 Subagent 自动评审
+- **完整的暂停点控制**：关键决策节点等待用户确认
+- **知识库积累**：每个功能完成后自动沉淀知识到 KNOWLEDGE.md
+- **TDD 驱动开发**：先写测试再写代码，确保代码质量
+
+## 安装
+
+```bash
+# 添加 marketplace（如已配置）
+/plugin marketplace add lz6267/teamwork-plugin
+
+# 或直接安装
+/plugin install teamwork
+```
+
+## 使用
+
+```bash
+# 启动协作流程
+/teamwork 实现用户登录功能
+
+# 查看当前状态
+/teamwork pmo
+
+# 退出协作模式
+/teamwork exit
+```
+
+## 文件结构
+
+```
+teamwork-plugin/
+├── .claude-plugin/
+│   └── plugin.json          # 插件配置
+├── skills/
+│   └── teamwork/
+│       ├── SKILL.md          # 主入口 - 流程定义与状态管理
+│       ├── ROLES.md          # 角色定义与职责
+│       ├── RULES.md          # 核心规则（暂停、流转、Subagent）
+│       ├── REVIEWS.md        # 评审流程规范
+│       ├── STANDARDS.md      # 编码与文档标准
+│       ├── TEMPLATES.md      # 文档模板（PRD/TC/TECH 等）
+│       └── agents/           # Subagent 规范
+│           ├── README.md         # 通用规范
+│           ├── prd-review.md     # PRD 多角色评审
+│           ├── tc-review.md      # TC 多角色评审
+│           ├── ui-design.md      # Designer UI 设计
+│           ├── arch-tech-review.md  # 架构师技术方案 Review
+│           ├── rd-develop.md     # RD TDD 开发 + 自查
+│           └── arch-code-review.md  # 架构师 Code Review
+├── README.md
+└── .gitignore
+```
+
+## Feature 流程概览
+
+```
+PMO 分析
+  ↓
+PM → PRD
+  ↓
+🤖 PRD 多角色评审（Subagent）
+  ↓
+⏸️ 用户确认 PRD
+  ↓
+🤖 Designer → UI 设计（Subagent，如需 UI）
+  ↓
+⏸️ 用户确认设计
+  ↓
+QA → TC
+  ↓
+🤖 TC 多角色评审（Subagent）
+  ↓
+RD → 技术方案
+  ↓
+🤖 架构师 Review（Subagent）
+  ↓
+⏸️ 用户确认技术方案
+  ↓
+🤖 RD → TDD 开发 + 自查（Subagent）
+  ↓
+🤖 架构师 → Code Review（Subagent）
+  ↓
+Designer → UI 还原验收（如有 UI）
+  ↓
+QA → 代码审查 → 集成测试
+  ↓
+PM → 最终验收
+  ↓
+PMO → 完成报告 + 知识沉淀
+```
+
+## License
+
+MIT

@@ -1,0 +1,5 @@
+.fuse_hidden*
+.DS_Store
+*.swp
+*.swo
+*~
