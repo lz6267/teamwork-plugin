@@ -1,3 +1,8 @@
+---
+name: teamwork
+description: 多角色协作开发框架 - PMO/PM/Designer/QA/RD/架构师六角色协同，使用 /teamwork 启动完整软件开发流程
+---
+
 # Teamwork Skill
 
 多角色协作开发规范。使用 `/teamwork` 启动。
