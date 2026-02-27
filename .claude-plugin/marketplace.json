@@ -1,0 +1,13 @@
+{
+  "name": "teamwork-plugin",
+  "owner": {
+    "name": "lz6267"
+  },
+  "plugins": [
+    {
+      "name": "teamwork",
+      "source": ".",
+      "description": "多角色协作开发框架 - PMO/PM/Designer/QA/RD/架构师六角色协同，含 6 个 Subagent 自动化阶段的完整软件开发流程"
+    }
+  ]
+}
